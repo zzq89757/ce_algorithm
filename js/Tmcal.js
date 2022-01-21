@@ -62,7 +62,7 @@ function Tmcal(seq) {
     let tm = (dH / (dS + 1.987 * Math.log(250 / 4 * Math.pow(10, -12))) + 16.6 / Math.log(10) * Math.log(204.92 * Math.pow(10, -3) / (1 + 0.7 * 204.92 * Math.pow(10, -3))) - 273.15).toFixed(1);
     let tuihuo = tm < 72 ? tm : new Number(72).toFixed(1);
     let gcContent = (GCNum / length * 100).toFixed(2) + "%";
-    return { length, tm, tuihuo, GCNum, gcContent };
+    return { length, gcContent, tm, tuihuo };
 }
 let seq = Tmcal("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC")
 console.log(seq);
