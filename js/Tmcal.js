@@ -10,31 +10,22 @@ function Tmcal(seq) {
         let kmer = seq.substr(i, 2);
         switch (kmer) {
             case "AA":
-                dH = dH + 9.1;
-                dS = dS + 24;
-                break;
             case "TT":
                 dH = dH + 9.1;
                 dS = dS + 24;
                 break;
             case "AC":
-                dH = dH + 6.5;
-                dS = dS + 17.3;
-                break;
             case "GT":
                 dH = dH + 6.5;
                 dS = dS + 17.3;
                 break;
             case "AG":
+            case "CT":
                 dH = dH + 7.8;
                 dS = dS + 20.8;
                 break;
-            case "CT":
-                dH = dH + 7.;
-                dS = dS + 20.;
-                break;
             case "AT":
-                dH = dH + 8.;
+                dH = dH + 8.6;
                 dS = dS + 23.;
                 break;
             case "TA":
@@ -42,25 +33,16 @@ function Tmcal(seq) {
                 dS = dS + 16.9;
                 break;
             case "TC":
-                dH = dH + 5.6;
-                dS = dS + 13.5;
-                break;
             case "GA":
                 dH = dH + 5.6;
                 dS = dS + 13.5;
                 break;
             case "TG":
-                dH = dH + 5.8;
-                dS = dS + 12.9;
-                break;
             case "CA":
                 dH = dH + 5.8;
                 dS = dS + 12.9;
                 break;
             case "CC":
-                dH = dH + 11;
-                dS = dS + 26.6;
-                break;
             case "GG":
                 dH = dH + 11;
                 dS = dS + 26.6;
