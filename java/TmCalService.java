@@ -56,9 +56,9 @@ public class TmCalService  {
 				
 		Double GC = 0d;
 		sequence(sequence);
-		//String Changdu = Primer_Length;
 		GC = ((double)numG + (double)numC) / ((double)numA + (double)numT + (double)numC + (double)numG) * 100d;
 		BigDecimal b = new BigDecimal(GC);
+		//GC含量四舍五入 保留一位小数
 		GC = b.setScale(1,BigDecimal.ROUND_HALF_UP).doubleValue();
 		String Tuihuo = Tm_Cal(trimseq);
 		
@@ -70,6 +70,7 @@ public class TmCalService  {
 		result.put("resultvalue2_en", "Length:  "+Primer_Length+" bp");
 		result.put("resultvalue3_en", "GC Content:  "+GC.toString()+" %");
 		result.put("resultvalue4_en", "Tm Value:  "+Tuihuo+" ℃");
+		// 设置最高退火温度为72度
 		if(Double.parseDouble(Tuihuo) >= 72d) {
 			Tuihuo = "72.0";
 		}
@@ -115,7 +116,7 @@ public class TmCalService  {
 	}
 	
 	/**
-	 * 计算输入的碱基对串并返回温度
+	 * 计算输入的碱基对串并返回退火温度（不设限制的Tm值）
 	 * @param Oligo
 	 * @return
 	 */
